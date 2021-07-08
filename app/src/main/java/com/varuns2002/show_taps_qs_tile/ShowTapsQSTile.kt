@@ -23,9 +23,11 @@ class ShowTapsQSTile : TileService() {
         }
         if (!showTapsEnabled) {
             Settings.System.putInt(contentResolver, "show_touches", 1)
+            qsTile.label = "Hide Taps"
             qsTile.state = 2
         } else {
             Settings.System.putInt(contentResolver, "show_touches", 0)
+            qsTile.label = "Show Taps"
             qsTile.state = 1
         }
         qsTile.updateTile()
@@ -40,8 +42,10 @@ class ShowTapsQSTile : TileService() {
             false
         }
         if (showTapsEnabled) {
+            qsTile.label = "Hide Taps"
             qsTile.state = 2
         } else {
+            qsTile.label = "Show Taps"
             qsTile.state = 1
         }
         qsTile.updateTile()
