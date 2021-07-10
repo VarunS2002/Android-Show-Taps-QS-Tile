@@ -14,7 +14,7 @@
             android:supportsRtl="true">
         <service
                 android:label="@string/show_taps"
-                android:icon="@drawable/ic_launcher_foreground"
+                android:icon="@drawable/ic_show_taps"
                 android:name="com.varuns2002.show_taps_qs_tile.ShowTapsQSTile"
                 android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
 
