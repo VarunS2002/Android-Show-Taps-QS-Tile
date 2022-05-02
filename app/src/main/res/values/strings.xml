@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Show Taps QS Tile</string>
-    <string name="show_taps">Toggle Taps</string>
+    <string name="qs_tile_label">Toggle Show Taps</string>
 </resources>
