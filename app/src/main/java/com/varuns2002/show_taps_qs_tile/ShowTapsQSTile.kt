@@ -3,6 +3,7 @@ package com.varuns2002.show_taps_qs_tile
 import android.content.Intent
 import android.graphics.drawable.Icon
 import android.net.Uri
+import android.os.Build
 import android.provider.Settings
 import android.provider.Settings.SettingNotFoundException
 import android.service.quicksettings.TileService
@@ -27,14 +28,22 @@ class ShowTapsQSTile : TileService() {
             qsTile.icon = Icon.createWithResource(
                 this, resources.getIdentifier("ic_show_taps", "drawable", packageName)
             )
-            qsTile.label = "Hide Taps"
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                qsTile.subtitle = "On"
+            } else {
+                qsTile.label = "Hide Taps"
+            }
             qsTile.state = 2
         } else {
             Settings.System.putInt(contentResolver, "show_touches", 0)
             qsTile.icon = Icon.createWithResource(
                 this, resources.getIdentifier("ic_hide_taps", "drawable", packageName)
             )
-            qsTile.label = "Show Taps"
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                qsTile.subtitle = "Off"
+            } else {
+                qsTile.label = "Show Taps"
+            }
             qsTile.state = 1
         }
         qsTile.updateTile()
@@ -52,13 +61,23 @@ class ShowTapsQSTile : TileService() {
             qsTile.icon = Icon.createWithResource(
                 this, resources.getIdentifier("ic_show_taps", "drawable", packageName)
             )
-            qsTile.label = "Hide Taps"
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                qsTile.label = "Show Taps"
+                qsTile.subtitle = "On"
+            } else {
+                qsTile.label = "Hide Taps"
+            }
             qsTile.state = 2
         } else {
             qsTile.icon = Icon.createWithResource(
                 this, resources.getIdentifier("ic_hide_taps", "drawable", packageName)
             )
-            qsTile.label = "Show Taps"
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                qsTile.label = "Show Taps"
+                qsTile.subtitle = "Off"
+            } else {
+                qsTile.label = "Show Taps"
+            }
             qsTile.state = 1
         }
         qsTile.updateTile()
