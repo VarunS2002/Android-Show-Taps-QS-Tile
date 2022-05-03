@@ -27,22 +27,17 @@ class ShowTapsQSTile : TileService() {
             qsTile.icon = Icon.createWithResource(
                 this, resources.getIdentifier("ic_show_taps", "drawable", packageName)
             )
-            qsTile.updateTile()
             qsTile.label = "Hide Taps"
-            qsTile.updateTile()
             qsTile.state = 2
-            qsTile.updateTile()
         } else {
             Settings.System.putInt(contentResolver, "show_touches", 0)
             qsTile.icon = Icon.createWithResource(
                 this, resources.getIdentifier("ic_hide_taps", "drawable", packageName)
             )
-            qsTile.updateTile()
             qsTile.label = "Show Taps"
-            qsTile.updateTile()
             qsTile.state = 1
-            qsTile.updateTile()
         }
+        qsTile.updateTile()
     }
 
     override fun onStartListening() {
@@ -57,20 +52,15 @@ class ShowTapsQSTile : TileService() {
             qsTile.icon = Icon.createWithResource(
                 this, resources.getIdentifier("ic_show_taps", "drawable", packageName)
             )
-            qsTile.updateTile()
             qsTile.label = "Hide Taps"
-            qsTile.updateTile()
             qsTile.state = 2
-            qsTile.updateTile()
         } else {
             qsTile.icon = Icon.createWithResource(
                 this, resources.getIdentifier("ic_hide_taps", "drawable", packageName)
             )
-            qsTile.updateTile()
             qsTile.label = "Show Taps"
-            qsTile.updateTile()
             qsTile.state = 1
-            qsTile.updateTile()
         }
+        qsTile.updateTile()
     }
 }
