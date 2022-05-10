@@ -29,9 +29,9 @@ class ShowTapsQSTile : TileService() {
                 this, resources.getIdentifier("ic_show_taps", "drawable", packageName)
             )
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                qsTile.subtitle = "On"
+                qsTile.subtitle = getString(R.string.subtitle_on)
             } else {
-                qsTile.label = "Hide Taps"
+                qsTile.label = getString(R.string.label_on)
             }
             qsTile.state = 2
         } else {
@@ -40,9 +40,9 @@ class ShowTapsQSTile : TileService() {
                 this, resources.getIdentifier("ic_hide_taps", "drawable", packageName)
             )
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                qsTile.subtitle = "Off"
+                qsTile.subtitle = getString(R.string.subtitle_off)
             } else {
-                qsTile.label = "Show Taps"
+                qsTile.label = getString(R.string.title_and_label_off)
             }
             qsTile.state = 1
         }
@@ -62,10 +62,10 @@ class ShowTapsQSTile : TileService() {
                 this, resources.getIdentifier("ic_show_taps", "drawable", packageName)
             )
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                qsTile.label = "Show Taps"
-                qsTile.subtitle = "On"
+                qsTile.label = getString(R.string.title_and_label_off)
+                qsTile.subtitle = getString(R.string.subtitle_on)
             } else {
-                qsTile.label = "Hide Taps"
+                qsTile.label = getString(R.string.label_on)
             }
             qsTile.state = 2
         } else {
@@ -73,10 +73,10 @@ class ShowTapsQSTile : TileService() {
                 this, resources.getIdentifier("ic_hide_taps", "drawable", packageName)
             )
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                qsTile.label = "Show Taps"
-                qsTile.subtitle = "Off"
+                qsTile.label = getString(R.string.title_and_label_off)
+                qsTile.subtitle = getString(R.string.subtitle_off)
             } else {
-                qsTile.label = "Show Taps"
+                qsTile.label = getString(R.string.title_and_label_off)
             }
             qsTile.state = 1
         }

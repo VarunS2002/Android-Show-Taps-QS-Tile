@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Show Taps QS Tile</string>
     <string name="qs_tile_label">Toggle Show Taps</string>
+    <string name="subtitle_on">On</string>
+    <string name="subtitle_off">Off</string>
+    <string name="label_on">Hide Taps</string>
+    <string name="title_and_label_off">Show Taps</string>
 </resources>
